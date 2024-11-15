@@ -30,7 +30,15 @@ function downloadImages() {
 	Promise.all([promise1, promise2, promise3])
 	.then((res) => {
 		// console.log(res);
-		res.forEach((imageUrl, index) => {
+		append(res);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+}
+
+function append(data) {
+	data.forEach((imageUrl, index) => {
 			console.log(imageUrl);
 			const image = document.createElement('img');
 			// image.style.width = '200px';
@@ -38,13 +46,7 @@ function downloadImages() {
 			image.alt = index+1;
 			output.append(image);
 		})
-	})
-	.catch((error) => {
-		console.log(error);
-	})
 }
-
-
 
 
 
