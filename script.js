@@ -38,16 +38,12 @@ function downloadImages() {
 }
 
 function append(data) {
-	data.forEach((imageUrl, index) => {
-			console.log(imageUrl);
+	data.forEach((img, index) => {
 			const image = document.createElement('img');
-			// image.style.width = '200px';
-			image.src = imageUrl;
+			image.src = img.url;
 			image.alt = index+1;
 			output.append(image);
 		})
 }
-
-
 
 
